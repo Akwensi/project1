@@ -9,7 +9,7 @@ import botocore
 import pandas as pd
 
 BUCKET_NAME = 'blossom-data-engs'
-KEY = 'project1/free-7-million-company-dataset.zip'
+KEY = 'free-7-million-company-dataset.zip'
 
 s3 = boto3.resource('s3')
 
