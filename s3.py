@@ -11,7 +11,7 @@ import pandas as pd
 BUCKET_NAME = 'blossom-data-engs'
 KEY = 'free-7-million-company-dataset.zip'
 
-s3 = boto3.resource('s3')
+s3 = boto3.client('s3')
 
 try:
     s3.Bucket(BUCKET_NAME).download_file(KEY, 'my_free-7-million-company-dataset.zip')
@@ -38,6 +38,6 @@ df.to_parquet('my_free-7-million-company-dataset.parquet.gzip', compression='gzi
 df.to_json(r'my_free-7-million-company-dataset.json')
 
 
-s3_client.upload_file("my_free-7-million-company-dataset.zip", blossom-data-eng-justice-akwensi/project1, "free-7-million-company-dataset-json.gzip")
+s3.upload_file('s3.py', 'blossom-data-eng-justice-akwensi', 'free-7-million-company-dataset-json.gzip')
 
-s3_client.upload_file("my_free-7-million-company-dataset.zip", blossom-data-eng-justice-akwensi/project1, "free-7-million-company-dataset-json.gzip")
+s3.upload_file('s3.py', 'blossom-data-eng-justice-akwensi', 'my_free-7-million-company-dataset.parquet.gzip')
